@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 import time
 import requests
 import notify2
-
+print("Hello")
 #Infinite loop for unlimited news :p
 notify2.init("News")
 while True:
