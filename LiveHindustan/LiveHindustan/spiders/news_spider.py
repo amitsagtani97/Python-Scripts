@@ -35,9 +35,6 @@ class NewsSpider(scrapy.Spider):
 
         news_summary = scrape_data(Selector(response).xpath('//div[@class="upper-first "]/div/p/text()').extract())
 
-        hindi_month = ['जनवरी,','फरवरी,','मार्च,','अप्रैल,','मई,','जून,','जुलाई,','अगस्त,','सितंबर,','अक्तूबर,','नवम्बर,','दिसम्बर,']
-        english_month = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC']
-
         news_date_time = scrape_data(Selector(response).xpath('//div[@class="list-time-tags tags-list"]/span/text()[not(ancestor::*[@class="list-tags"])]').extract())
         date_time_list = []
         for i in news_date_time:
@@ -47,6 +44,8 @@ class NewsSpider(scrapy.Spider):
 
                 date_time_list.append(i)
 
+        # The below code just prints the news
+        # It can be processed to do something like inserting it in a database etc.
         for i,j,k,l,m in zip(news_titles,news_urls,image_urls,news_summary,date_time_list):
             print "News title : " + i
             print "News link : " + 'http://www.livehindustan.com' + j
