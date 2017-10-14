@@ -6,17 +6,29 @@ import time
 import requests
 import notify2
 
+
 #Infinite loop for unlimited news :p
 notify2.init("News")
+##while True:
+##	page = requests.get("http://timesofindia.indiatimes.com/")
+##	soup = BeautifulSoup(page.content, "html.parser")
+##	headlines = soup.find(id="lateststories")
+##	topstories = headlines.find_all(class_="list9")
+##	for x in range(len(topstories[0].find_all("a"))):
+##		news = (topstories[0].find_all("a")[x]).get_text().strip()
+##		display = notify2.Notification(news)
+##		display.show()
+##		time.sleep(12)
+
 while True:
-	page = requests.get("http://timesofindia.indiatimes.com/")
+	page = requests.get("https://www.nytimes.com/section/world")
 	soup = BeautifulSoup(page.content, "html.parser")
-	headlines = soup.find(id="lateststories")
-	topstories = headlines.find_all(class_="list9")
-	for x in range(len(topstories[0].find_all("a"))):
-		news = (topstories[0].find_all("a")[x]).get_text().strip()
-		display = notify2.Notification(news)
-		display.show()
-		time.sleep(12)
-
-
+	headlines = soup.find(id="latest-panel")
+	topstories = headlines.find_all("h2")
+	print(topstories)
+##	for x in range(len(topstories[0].find_all("h2"))):
+##		news = (topstories[0].find_all("h2")[x]).get_text().strip()
+##		display = notify2.Notification(news)
+##		print(news)
+##		display.show()
+##		#time.sleep(12)
