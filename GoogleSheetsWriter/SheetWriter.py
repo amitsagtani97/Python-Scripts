@@ -185,7 +185,7 @@ service = discovery.build('sheets', 'v4', http=http,
 
 # Change this to the ID of the spreadsheet you wish to write to. This can be found in the Sheet URL
 # e.g https://docs.google.com/spreadsheets/u/1/d/<spreadsheetId>
-spreadsheetId = '1tOZqax-oNvsXOVlQe1vn9FeqConRBgDkltd_P0zADsI'
+spreadsheetId = '123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJK'
 try:
 	spreadhseet = service.spreadsheets().get(spreadsheetId=spreadsheetId).execute()
 
