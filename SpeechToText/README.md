@@ -1,5 +1,4 @@
-Speech To Text
+SPEECH TO TEXT
 
 After running Program
-
-Give Your voice input,text will get displayed.
+Give Your voice input ,text will get displayed.
