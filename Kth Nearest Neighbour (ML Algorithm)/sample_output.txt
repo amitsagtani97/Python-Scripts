@@ -1,0 +1,19 @@
+Abalone is a common name for any of a group of small to very large sea snails, marine gastropod molluscs in the family Haliotidae.
+
+
+From certain input about Abalone this algorithm will predict whether Abalone is 
+M-> Male,
+F->Female or
+I->Infant 
+
+
+Accuracy of this algorithm is 65 to 70%
+enter length of Abalone0.678
+enter diameter0.4
+enter height0.9
+enter whole weight1.064
+enter shucked weight0.064
+enter viscera weight0.2
+enter shell weight0.8
+
+F
