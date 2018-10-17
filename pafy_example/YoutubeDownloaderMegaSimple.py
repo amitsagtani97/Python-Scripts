@@ -14,6 +14,7 @@ https://www.geeksforgeeks.org/youtube-mediaaudio-download-using-python-pafy/
 
 #%%
 import pafy
+import os
 #%%
 plurl='https://www.youtube.com/playlist?list=PL21F4788EBF186DC0' # Pumuckl
 plurl='https://www.youtube.com/playlist?list=PLQrsocOZ_VCmc6WE4QHNpG-PTN4TgS6-7' # Eisbär Affe & Co (todo)
@@ -29,17 +30,19 @@ print("ready")
 
 #%% Musik Download
 plurl='https://www.youtube.com/playlist?list=PLw-VjHDlEOgvtnnnqWlTqByAtC7tXBg6D'
-folder='YoutubeMusic'
-plurl='https://www.youtube.com/watch?v=9xjI5Zf6bl8&list=PLC01DA09095BEED88'
-folder='Parkour'
-# todo create folder automatically
+folder='YoutubeMusic1'
+#plurl='https://www.youtube.com/watch?v=9xjI5Zf6bl8&list=PLC01DA09095BEED88'
+#folder='Parkour'
+newpath = 'C:/tmp/'+folder 
+if not os.path.exists(newpath):
+    os.makedirs(newpath)
 playlist = pafy.get_playlist(plurl)
 #%
 for i in range(0,len(playlist['items'])):
     #%
     p1=playlist['items'][i]['pafy']
     #%
-    p1.getbestaudio().download(filepath="C:/tmp/"+folder)
+    p1.getbestaudio().download(filepath=newpath)
     
 #%
 print("ready")
